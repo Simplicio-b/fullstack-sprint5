@@ -1,5 +1,6 @@
 // css
 import './App.css';
+import { ResetStyles } from "./components/GlobalStyles"
 
 // components
 import Footer from './components/Footer';
@@ -9,22 +10,25 @@ import Spinner from './components/Spinner';
 import ProductsPage from './pages/products/ProductsPage';
 
 // contextos
-import Provider from "./contexts"
+import Provider from "./contexts";
 
 function App() {
 
   return (
-    <Provider>
-      <Spinner />
-      
-      <div className="page-container">
-        <Message />
-        <Header />
-        <ProductsPage />
-      </div>
-            
-      <Footer />
-    </Provider>
+    <>
+      <ResetStyles />
+      <Provider>
+        <Spinner />
+        
+        <div className="page-container">
+          <Message />
+          <Header />
+          <ProductsPage />
+        </div>
+              
+        <Footer />
+      </Provider>
+    </>
   );
 }
 

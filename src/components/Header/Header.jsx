@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import FilterContext from "../contexts/FilterContext";
-import Menu from "./Menu";
+import FilterContext from "../../contexts/FilterContext";
+import Menu from "../Menu";
 
 function Header() {
 
