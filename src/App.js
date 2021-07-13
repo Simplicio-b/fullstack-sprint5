@@ -1,5 +1,4 @@
-// css
-import './App.css';
+// styles
 import { ResetStyles } from "./components/GlobalStyles"
 
 // components

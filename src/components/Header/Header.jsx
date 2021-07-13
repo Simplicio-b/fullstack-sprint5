@@ -2,12 +2,16 @@ import { useContext } from "react";
 import FilterContext from "../../contexts/FilterContext";
 import Menu from "../Menu";
 
+import {
+   Header as Head
+} from "./styles"
+
 function Header() {
 
     const { setFilter } = useContext(FilterContext);
 
     return (
-        <header className="header">
+        <Head>
             <div className="header__container">
                 <div className="header__mobile">
                     <div className="header__drawer menu header__drawer--active">
@@ -36,7 +40,7 @@ function Header() {
 
                 <Menu />
             </div>
-        </header >
+        </Head>
     );
 }
 
