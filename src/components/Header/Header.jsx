@@ -1,6 +1,11 @@
 import { useContext } from "react";
+
+// contexts
 import FilterContext from "../../contexts/FilterContext";
+
+//components
 import Menu from "../Menu";
+import { Link } from "react-router-dom"
 
 import {
    Header as Head
@@ -13,6 +18,7 @@ function Header() {
     return (
         <Head>
             <div className="header__container">
+                
                 <div className="header__mobile">
                     <div className="header__drawer menu header__drawer--active">
                         <img className="menu__img" src="assets/menu.svg" alt="menu" />
@@ -22,15 +28,17 @@ function Header() {
                         <img src="assets/close.svg" alt="fechar menu" />
                         <p className="close__title">fechar</p>
                     </div>
-                    <h1 className="header__logo">
+                    <Link className="header__logo" to="/"> 
                         <img className="header__img" src="assets/rchlo.svg" alt="Logo" />
-                    </h1>
+                    </Link>
                 </div>
-                <div className="header__desktop">
+
+                <Link className="header__desktop" to="/">
                     <h1 className="header__logo">
                         <img className="header__img" src="assets/riachuelo.svg" alt="Logo" />
                     </h1>
-                </div>
+                </Link>
+
                 <div className="header__search">
                     <img className="header__icon" src="assets/search.svg" alt="lupa" />
                     <input className="header__input" type="search" placeholder="O que você está procurando?"

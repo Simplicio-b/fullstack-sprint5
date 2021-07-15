@@ -1,10 +1,17 @@
 import { useContext, useEffect, useState } from "react";
+
+// contextos
 import FilterContext from "../../contexts/FilterContext";
 import LoadingContext from "../../contexts/LoadingContext";
 import MessageContext from "../../contexts/MessageContext";
 import ProductsService from "../../services/ProductsService";
+
+// Components
 import Breadcrumbs from "./components/Breadcrumbs";
 import Filters from "./components/Filters";
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+import { Link } from "react-router-dom"
 
 function Product({ image, name, price }) {
     return (
@@ -45,28 +52,38 @@ function ProductsPage() {
     }
 
     return (
-        <main className="main">
-            <Breadcrumbs></Breadcrumbs>
-            <Filters filters={filters}></Filters>
-            <section className="main__products products">
-                <div className="products__row">
-                    <ol className="products__list">
-                        {products
-                            .filter(p =>
-                                filter ? p.name.toUpperCase().indexOf(filter.toUpperCase()) !== -1 : true)
-                            .map(
-                                p =>
-                                    <Product key={p.sku} image={p.image} name={p.name} price={p.price} />
-                            )
-                        }
-                    </ol>
-                </div>
-                <div className="products__row">
-                    <ol className="products__list">
-                    </ol>
-                </div>
-            </section>
-        </main>
+        <>
+            <Header />
+
+            <main className="main">
+                <Breadcrumbs></Breadcrumbs>
+                <Filters filters={filters}></Filters>
+                <section className="main__products products">
+                    <div className="products__row">
+                        <ol className="products__list">
+                            {
+                                products
+                                .filter(p =>
+                                    filter ? p.name.toUpperCase().indexOf(filter.toUpperCase()) !== -1 : true)
+                                .map(
+                                    p => (
+                                        <Link key={p.sku} to={`product-detail/${p.sku}`}>
+                                            <Product  image={p.image} name={p.name} price={p.price} />
+                                        </Link>
+                                    )   
+                                )
+                            }
+                        </ol>
+                    </div>
+                    <div className="products__row">
+                        <ol className="products__list">
+                        </ol>
+                    </div>
+                </section>
+            </main>
+            
+            <Footer />
+        </>
     );
 }
 

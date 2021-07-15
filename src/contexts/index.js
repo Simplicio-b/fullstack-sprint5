@@ -21,7 +21,7 @@ function Provider({ children }) {
     function loadCategories() {
       addRequest();
       CategoriesService.get()
-        .then(c => setCategories(c))
+        .then(c =>  setCategories(c))
         .catch(() => setMessage("Ocorreu um erro ao carregar as categorias..."))
         .finally(() => removeRequest());
     }

@@ -1,34 +1,47 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import Footer from './components/Footer'
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+import CategoriesService from "./services/CategoriesService"
 
+jest.mock("./services/CategoriesService")
 
-// testes de renderizacao do footer
 describe("tests de mock", () => {
 
-  it("", () => {
+  it("CategoriasService e testes de renderizacao menu", async () => {
+    CategoriesService.get.mockResolvedValue(
+      {
+        "all": [
+            {
+                "id": 6,
+                "label": "Calçados",
+                "link": "#home"
+            },
+            {
+                "id": 7,
+                "label": "Acessórios e Relógios",
+                "link": "#home"
+            },
+            {
+              "id": 10,
+              "label": "Cuzcus",
+              "link": "#home"
+            }
+        ],
+        "current": [
+        ]
+      }
+    )
     
-  })
+    render(<App />);
+
+    expect(await screen.findByText("Cuzcus")).toBeInTheDocument();
+    expect(await screen.findByText("Calçados")).toBeInTheDocument();
+    expect(await screen.findByText("Acessórios e Relógios")).toBeInTheDocument();
+
+    expect(screen.getByTestId('menu-categorias').children.length).toBe(3);
+
+  });
 
 
-        
-  // it("Exibir lista de transacão através da API", () => {
-  //   // categorias
-  //   const mock = [
-  //     {"id":1,"label":"Novidades","link":"#home"},
-  //     {"id":2,"label":"Feminino","link":"#home"}
-  //   ]
-
-
-
-
-
-  // });
 
 });

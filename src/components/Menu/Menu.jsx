@@ -16,7 +16,7 @@ function Menu() {
 
     return (
         <nav className="header__menu menu">
-            <ul className="menu__list" data-testid="categorias">
+            <ul className="menu__list" data-testid="menu-categorias">
                 {categories.all && categories.all.map(m => <MenuItem key={m.id} label={m.label} />)}
             </ul>
         </nav>
