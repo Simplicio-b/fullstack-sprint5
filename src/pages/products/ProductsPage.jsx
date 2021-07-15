@@ -7,25 +7,27 @@ import MessageContext from "../../contexts/MessageContext";
 import ProductsService from "../../services/ProductsService";
 
 // Components
-import Breadcrumbs from "./components/Breadcrumbs";
-import Filters from "./components/Filters";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import Filters from "../../components/Filters";
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import { Link } from "react-router-dom"
 
-function Product({ image, name, price }) {
+function Product({ image, name, price, sku }) {
     return (
-        <li className="products__card card">
-            <div className="card">
-                <img className="card__img" src={image} alt="" />
-                <p className="card__description">
-                    {name}
-                </p>
-                <p className="card__price">
-                    R$ {price}
-                </p>
-            </div>
-        </li>
+        <Link className="products__card card" to={`product-detail/${sku}`}>
+            <li className="products__card card">
+                <div className="card">
+                    <img className="card__img" src={image} alt="" />
+                    <p className="card__description">
+                        {name}
+                    </p>
+                    <p className="card__price">
+                        R$ {price}
+                    </p>
+                </div>
+            </li>
+        </Link> 
     );
 }
 
@@ -66,11 +68,13 @@ function ProductsPage() {
                                 .filter(p =>
                                     filter ? p.name.toUpperCase().indexOf(filter.toUpperCase()) !== -1 : true)
                                 .map(
-                                    p => (
-                                        <Link key={p.sku} to={`product-detail/${p.sku}`}>
-                                            <Product  image={p.image} name={p.name} price={p.price} />
-                                        </Link>
-                                    )   
+                                    p => 
+                                        <Product  
+                                            image={p.image} 
+                                            name={p.name} 
+                                            price={p.price} 
+                                            sku={p.sku} 
+                                        />
                                 )
                             }
                         </ol>
