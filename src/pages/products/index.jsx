@@ -4,6 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import FilterContext from "../../contexts/FilterContext";
 import LoadingContext from "../../contexts/LoadingContext";
 import MessageContext from "../../contexts/MessageContext";
+
+//service
 import ProductsService from "../../services/ProductsService";
 
 // Components
@@ -12,6 +14,10 @@ import Filters from "../../components/Filters";
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import { Link } from "react-router-dom"
+
+import {
+    Container
+} from "../../components/GlobalComponents"
 
 function Product({ image, name, price, sku }) {
     return (
@@ -57,7 +63,7 @@ function ProductsPage() {
         <>
             <Header />
 
-            <main className="main">
+            <Container>
                 <Breadcrumbs></Breadcrumbs>
                 <Filters filters={filters}></Filters>
                 <section className="main__products products">
@@ -84,7 +90,7 @@ function ProductsPage() {
                         </ol>
                     </div>
                 </section>
-            </main>
+            </Container>
             
             <Footer />
         </>

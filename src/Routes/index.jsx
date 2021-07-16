@@ -6,7 +6,7 @@ import {
 
 
 // Screens
-import ProductPage from "../pages/products/ProductsPage";
+import ProductPage from "../pages/products";
 import ProductDetails from "../pages/productDetails";
 
 function Routes() {
