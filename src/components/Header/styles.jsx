@@ -77,32 +77,6 @@ export const Header = styled.header `
         line-height: 0;
     }
 
-    .header__menu .menu__list {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .header__menu .menu__link {
-        font-size: 0.8125rem;
-        font-weight: 600;
-        color: #000;
-        text-transform: uppercase;
-        padding-bottom: 5px;
-        vertical-align: baseline;
-    }
-
-    .header__menu .menu__link:hover {
-        border-bottom: 2px solid #000;
-    }
-
-    @media (max-width: 1200px) {
-        .header__menu {
-            display: none;
-        }
-    }
-
     @media (max-width: 1200px) {
         .header__logo {
             flex-grow: 1;
