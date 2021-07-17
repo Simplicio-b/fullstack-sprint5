@@ -1,5 +1,3 @@
-import { useContext } from "react";
-
 // icons
 import MenuIcon from '../../assets/menu.svg';
 import CloseIcon from '../../assets/close.svg';
@@ -16,7 +14,6 @@ import {
 } from "./styles"
 
 function Header() {
-
     return (
         <Head>
             <div className="header__container">

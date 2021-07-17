@@ -67,10 +67,6 @@ function ProductsPage() {
                             }
                         </ol>
                     </div>
-                    <div className="products__row">
-                        <ol className="products__list">
-                        </ol>
-                    </div>
                 </section>
             </Container>
             
