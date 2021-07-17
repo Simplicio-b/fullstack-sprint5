@@ -11,31 +11,13 @@ import ProductsService from "../../services/ProductsService";
 // Components
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Filters from "../../components/Filters";
-import Header from "../../components/Header"
-import Footer from "../../components/Footer"
-import { Link } from "react-router-dom"
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Product from "../../components/Product";
 
 import {
     Container
 } from "../../components/GlobalComponents"
-
-function Product({ image, name, price, sku }) {
-    return (
-        <Link className="products__card card" to={`product-detail/${sku}`}>
-            <li className="products__card card">
-                <div className="card">
-                    <img className="card__img" src={image} alt="" />
-                    <p className="card__description">
-                        {name}
-                    </p>
-                    <p className="card__price">
-                        R$ {price}
-                    </p>
-                </div>
-            </li>
-        </Link> 
-    );
-}
 
 function ProductsPage() {
     const [products, setProducts] = useState([]);
