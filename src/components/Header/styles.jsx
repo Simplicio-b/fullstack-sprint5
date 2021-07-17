@@ -27,39 +27,6 @@ export const Header = styled.header `
         transform: translateY(10px);
     }
 
-    .header__search {
-        position: relative;
-    }
-
-    .header__icon {
-        width: 24px;
-        opacity: 26%;
-        top: 8px;
-        position: absolute;
-        padding-left: 10px;
-        color: rgba(0, 0, 0, 0.26);
-        line-height: 40px;
-    }
-
-    .header__input {
-        height: 40px;
-        width: 100%;
-        border-radius: 4px;
-        border: 1px solid rgba(0, 0, 0, 0.23);
-        padding-left: 40px;
-    }
-
-    .header__input:hover {
-        border-color: #000;
-    }
-
-    .header__input::placeholder {
-        font-size: 0.9375rem;
-        font-weight: 600;
-        font-family: "Open Sans";
-        color: #9b9b9b;
-    }
-
     .header__drawer {
         width: 24px;
         opacity: 54%;

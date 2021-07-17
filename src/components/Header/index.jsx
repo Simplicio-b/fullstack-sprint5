@@ -5,14 +5,10 @@ import MenuIcon from '../../assets/menu.svg';
 import CloseIcon from '../../assets/close.svg';
 import LogoResposiveIcon from '../../assets/rchlo.svg';
 import LogoIcon from '../../assets/riachuelo.svg';
-import SearchIcon from '../../assets/search.svg';
-
-// contexts
-import FilterContext from "../../contexts/FilterContext";
-
 
 //components
 import Menu from "../Menu";
+import Search from "../Search"
 import { Link } from "react-router-dom"
 
 import {
@@ -20,8 +16,6 @@ import {
 } from "./styles"
 
 function Header() {
-
-    const { setFilter } = useContext(FilterContext);
 
     return (
         <Head>
@@ -47,12 +41,7 @@ function Header() {
                     </h1>
                 </Link>
 
-                <div className="header__search">
-                    <img className="header__icon" src={SearchIcon} alt="lupa" />
-                    <input className="header__input" type="search" placeholder="O que você está procurando?"
-                        onChange={(event) => setFilter(event.target.value)}
-                    />
-                </div>
+                <Search />
 
                 <Menu />
             </div>
