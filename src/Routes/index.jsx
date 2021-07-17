@@ -8,6 +8,7 @@ import {
 // Screens
 import ProductPage from "../pages/products";
 import ProductDetails from "../pages/productDetails";
+import Ops404 from "../pages/404"
 
 function Routes() {
     return (
@@ -15,6 +16,7 @@ function Routes() {
             <Switch>
                 <Route exact path="/" component={ProductPage} />
                 <Route path="/product-detail/:id" component={ProductDetails} />
+                <Route path="*" component={Ops404} />
             </Switch>
         </BrowserRouter>
     )

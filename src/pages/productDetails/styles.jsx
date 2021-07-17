@@ -6,6 +6,11 @@ export const Container = styled.main `
     max-width: 1100px;
     padding: 16px;
     width: 80%;
+    flex-direction: row;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+    }
 `
 
 export const ContainerImg = styled.div `
@@ -23,6 +28,7 @@ export const ContainerInfo = styled.div `
     flex-direction: column;
     justify-content: space-between;
     padding: 30px 10px;
+
 `
 
 export const BoxPrice = styled.div `
@@ -36,6 +42,7 @@ export const BoxPrice = styled.div `
     padding: 15px;
     border-radius: 2px;
 `
+
 export const Btn = styled.button `
     width: 100%;
     height: 40px;
@@ -48,18 +55,36 @@ export const Btn = styled.button `
     margin-bottom: ${e => e.mb || 0}px;
 `
 
-export const LabelPrice = styled.p `
-    color: #d50000;
-    font-weight: 700;
-    font-size: 25px;
-`
-
-export const LabelDesc = styled.p `
-    font-size: 26px;
-    font-weight: 700;
+export const LabelTxt = styled.p `
+    color: ${e => e.cor};
+    font-weight: ${e => e.fw};
+    font-size: ${e => e.fs || 16}px;
 `
 
 export const ProductImg = styled.img `
-    height: 450px; 
+    height: 500px; 
     cursor: pointer;
+`
+
+export const TamanhoBox = styled.div `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; 
+    width: 50px; 
+    border: 1px solid #333; 
+    border-radius: 2px; 
+    margin: 10px 10px 0 0; 
+    cursor: pointer;
+    font-weight: 700;
+
+    .active {
+        background-color: #333;
+        color: #fff;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 `
