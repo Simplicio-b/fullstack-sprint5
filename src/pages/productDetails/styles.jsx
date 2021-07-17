@@ -88,3 +88,12 @@ export const TamanhoBox = styled.div `
         justify-content: center;
     }
 `
+
+export const ContentTamanhos = styled.div `
+    display: flex; 
+    flex-wrap: wrap;
+`
+
+export const ContentBtns = styled.div `
+    width: 100%;
+`

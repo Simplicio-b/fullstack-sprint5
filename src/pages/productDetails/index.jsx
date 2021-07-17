@@ -12,7 +12,9 @@ import {
     Btn,
     LabelTxt,
     ProductImg,
-    TamanhoBox 
+    TamanhoBox,
+    ContentTamanhos,
+    ContentBtns 
 } from "./styles"
 
 
@@ -42,14 +44,15 @@ function ProductDetails() {
     useEffect(() => {
         const name = products ? products.name : "";
         const index = name.toLocaleUpperCase().indexOf("TAM");
-        const tamanhos = name.substr(index + 3).replaceAll(" ", "");
-        const tamanhoMin = parseInt(tamanhos.split("a")[0]);
-        const tamanhoMax = parseInt(tamanhos.split("a")[1]);
+        const tamanhos = name.substr(index + 3)
+                        .replaceAll(" ", "")
+                        .split("a")
+                        .map(t => parseInt(t));
 
         if(index !== -1) {
             let tam = []
 
-            for(let i = tamanhoMin; tamanhoMax >= i; i++) {
+            for(let i = tamanhos[0]; tamanhos[1] >= i; i++) {
                 tam.push(i);
             }
 
@@ -93,7 +96,7 @@ function ProductDetails() {
                             </span>
                         </LabelTxt>
 
-                        <div style={{ display: "flex", flexWrap: "wrap" }} >
+                        <ContentTamanhos>
                             {tamanho.tamanhos.length !== 0 && 
                                 tamanho.tamanhos.map(t => 
                                     <TamanhoBox key={t} onClick={() => setTamanhos({ ...tamanho, selectTamanho: t })}>
@@ -105,13 +108,15 @@ function ProductDetails() {
                                     </TamanhoBox>
                                 )
                             }
-                        </div>
+                        </ContentTamanhos>
                     </div>
 
                     <BoxPrice>
-                        <LabelTxt cor="#d50000" fs="24" fw="700" >R$ {products && products.price}</LabelTxt>
+                        <LabelTxt cor="#d50000" fs="24" fw="700" >
+                            R$ {products && products.price}
+                        </LabelTxt>
 
-                        <div style={{ width: "100%" }}>
+                        <ContentBtns>
                             <Btn bg="#008000" mb="12">
                                 ADICIONAR À SACOLA
                             </Btn>
@@ -119,7 +124,7 @@ function ProductDetails() {
                             <Btn bg="#d50000">
                                 CANCELAR
                             </Btn>
-                        </div>
+                        </ContentBtns>
 
                     </BoxPrice>
                 </ContainerInfo>
