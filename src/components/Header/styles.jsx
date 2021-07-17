@@ -1,16 +1,18 @@
 import styled from "styled-components"
 
+
 export const Header = styled.header `
     width: 100%;
     padding-bottom: 10px;
     border-bottom: 1px solid #e0e0e0;
+`
 
-    .header__container {
-        margin: auto;
-        width: 95%;
-        max-width: 1200px;
-    }
+export const Container = styled.div `
+    margin: auto;
+    width: 95%;
+    max-width: 1200px;
 
+    
     .header__mobile {
         display: none;
         margin-bottom: 25px;
@@ -20,11 +22,6 @@ export const Header = styled.header `
         height: 70px;
         line-height: 70px;
         text-align: center;
-    }
-
-    .header__img {
-        height: 25px;
-        transform: translateY(10px);
     }
 
     .header__drawer {
@@ -71,4 +68,9 @@ export const Header = styled.header `
         }
     }
 
+`
+
+export const Img = styled.img `
+    height: 25px;
+    transform: translateY(10px);
 `

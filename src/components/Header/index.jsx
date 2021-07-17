@@ -10,13 +10,15 @@ import Search from "../Search"
 import { Link } from "react-router-dom"
 
 import {
-   Header as Head
+   Header as Head,
+   Container,
+   Img
 } from "./styles"
 
 function Header() {
     return (
         <Head>
-            <div className="header__container">
+            <Container>
                 
                 <div className="header__mobile">
                     <div className="header__drawer menu header__drawer--active">
@@ -28,20 +30,20 @@ function Header() {
                         <p className="close__title">fechar</p>
                     </div>
                     <Link className="header__logo" to="/"> 
-                        <img className="header__img" src={LogoResposiveIcon} alt="Logo" />
+                        <Img src={LogoResposiveIcon} alt="Logo" />
                     </Link>
                 </div>
 
                 <Link className="header__desktop" to="/">
                     <h1 className="header__logo">
-                        <img className="header__img" src={LogoIcon} alt="Logo" />
+                        <Img src={LogoIcon} alt="Logo" />
                     </h1>
                 </Link>
 
                 <Search />
 
                 <Menu />
-            </div>
+            </Container>
         </Head>
     );
 }
