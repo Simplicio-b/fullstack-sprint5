@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 
 import {
     ProductsCard,
-    Card
+    Card,
+    ProductImg
 } from "./styles"
 
 function Product({ image, name, price, sku }) {
@@ -10,7 +11,7 @@ function Product({ image, name, price, sku }) {
             <ProductsCard>
                 <Link to={`product-detail/${sku}`}>
                     <Card>
-                        <img className="card__img" src={image} alt="" />
+                        <ProductImg className="card__img" src={image} alt="" />
                         <p className="card__description">
                             {name}
                         </p>
