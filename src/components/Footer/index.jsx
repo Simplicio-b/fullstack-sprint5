@@ -24,9 +24,13 @@ import LinkedinIcon from "../../assets/ico-linkedin.svg";
 import AcessibilityIcon from "../../assets/ico-a11y.webp";
 import CertificatedIcon from "../../assets/ra1000.webp";
 
+import {
+    Footer as Container
+} from "./styles"
+
 function Footer() {
     return (
-        <footer className="footer">
+        <Container>
             <section className="footer__contact">
                 <div className="footer__container contact">
                     <p className="contact__info">Receba ofertas e novidades por e-mail</p>
@@ -296,7 +300,7 @@ function Footer() {
                     </div>
                 </div>
             </section>
-        </footer>
+        </Container>
     );
 }
 

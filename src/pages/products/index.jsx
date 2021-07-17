@@ -19,6 +19,11 @@ import {
     Container
 } from "../../components/GlobalComponents"
 
+import {
+    ContainerProducts,
+    List
+} from "./styles"
+
 function ProductsPage() {
     const [products, setProducts] = useState([]);
     const [filters, setFilters] = useState([]);
@@ -48,9 +53,10 @@ function ProductsPage() {
             <Container>
                 <Breadcrumbs></Breadcrumbs>
                 <Filters filters={filters}></Filters>
-                <section className="main__products products">
+
+                <ContainerProducts>
                     <div className="products__row">
-                        <ol className="products__list">
+                        <List>
                             {
                                 products
                                 .filter(p =>
@@ -65,9 +71,10 @@ function ProductsPage() {
                                         />
                                 )
                             }
-                        </ol>
+                        </List>
                     </div>
-                </section>
+                </ContainerProducts>
+
             </Container>
             
             <Footer />
