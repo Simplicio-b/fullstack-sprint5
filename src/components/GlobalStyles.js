@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-export const ResetStyles = createGlobalStyle `
+const ResetStyles = createGlobalStyle`
     html,
     body,
     div,
@@ -145,4 +145,6 @@ export const ResetStyles = createGlobalStyle `
         outline: none;
     }
 
-`
+`;
+
+export default ResetStyles;

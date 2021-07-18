@@ -1,29 +1,23 @@
 import { useState } from 'react';
 
 function useLoading() {
+	const [liveRequests, setLiveRequests] = useState(0);
 
-    const [liveRequests, setLiveRequests] = useState(0);
+	function addRequest() {
+		// eslint-disable-next-line no-shadow
+		setLiveRequests((liveRequests) => liveRequests + 1);
+	}
 
-    function addRequest() {
-        setLiveRequests(liveRequests => {
-            // console.log(`addRequest ${liveRequests}`);
-            return liveRequests + 1;
-        });
-    }
+	function removeRequest() {
+		// eslint-disable-next-line no-shadow
+		setLiveRequests((liveRequests) => liveRequests - 1);
+	}
 
-    function removeRequest() {
-        setLiveRequests(liveRequests => {
-            // console.log(`removeRequest ${liveRequests}`);
-            return liveRequests - 1;
-        });
-    }
+	function isLoading() {
+		return liveRequests > 0;
+	}
 
-    function isLoading() {
-        // console.log(`isLoading ${liveRequests}`);
-        return liveRequests > 0;
-    }
-
-    return [addRequest, removeRequest, isLoading];
+	return [addRequest, removeRequest, isLoading];
 }
 
 export default useLoading;

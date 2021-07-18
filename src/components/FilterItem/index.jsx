@@ -1,15 +1,12 @@
-import {
-    Container,
-    Label
-} from "./styles"
+import { Container, Label } from './styles';
 
 function FilterItem({ label }) {
-    return (
-        <Container>
-            <Label>{label}</Label>
-            <img className="filters__img" src="assets/filter.svg" alt="filtro" />
-        </Container>
-    );
+	return (
+		<Container>
+			<Label>{label}</Label>
+			<img className="filters__img" src="assets/filter.svg" alt="filtro" />
+		</Container>
+	);
 }
 
-export default FilterItem
+export default FilterItem;
