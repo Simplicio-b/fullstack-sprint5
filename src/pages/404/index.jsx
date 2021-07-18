@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Container, Title, Subtitle, Img } from './styles';
 
-
 import img404 from '../../assets/404.svg';
 
 function Ops404() {

@@ -25,7 +25,6 @@ import MessageContext from '../../contexts/MessageContext';
 // service
 import ProductsService from '../../services/ProductsService';
 
-
 function ProductDetails() {
 	const [tamanho, setTamanhos] = useState({
 		tamanhos: [4, 5, 6, 7, 8, 9, 10],
@@ -63,9 +62,6 @@ function ProductDetails() {
 		}
 
 		setTamanhos({ ...tamanho, tamanhos: [], selectTamanho: 'Tamanho Unico' });
-		
-
-		
 	}, [products]);
 
 	function loadProducts() {

@@ -10,7 +10,7 @@ function Breadcrumbs() {
 	return (
 		<Breadcrumb>
 			<nav>
-				<BreadcrumbsList>
+				<BreadcrumbsList data-testid="breadcrumbs-test" >
 					{categories.current &&
 						categories.current.map((c) => (
 							<BreadcrumbItem key={c.id} link={c.link} label={c.name} />

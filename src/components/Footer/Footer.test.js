@@ -27,4 +27,10 @@ describe('Testes de renderizacão Footer', () => {
 		expect(screen.getByText('Siga a Riachuelo')).toBeInTheDocument();
 		expect(screen.getByText('Acessibilidade')).toBeInTheDocument();
 	});
+
+	it('Footer teste de snapshot', () => {
+		const { container } = render(<Footer />);
+
+		expect(container.firstChild).toMatchSnapshot();
+	});
 });
