@@ -7,6 +7,11 @@ describe('Teste component BreadcrumbItem', () => {
 
 		expect(screen.getByText('Home')).toBeInTheDocument();
 	});
+	it('Teste de renderisacao', () => {
+		render(<BreadcrumbsItem label="Home" />);
+
+		expect(screen.getByText('Home')).toBeInTheDocument();
+	});
 
 	it('Teste de snapshot BreadcrumbItem', () => {
 		const { container } = render(<BreadcrumbsItem link="#home" label="Home" />);

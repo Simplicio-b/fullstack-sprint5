@@ -9,7 +9,7 @@ function Message() {
 	return (
 		message && (
 			<Alert>
-				<CloseBtn onClick={() => setMessage('')}>&times;</CloseBtn>
+				<CloseBtn onClick={() => setMessage('')} data-testid='message-button-test'>&times;</CloseBtn>
 				{message}
 			</Alert>
 		)
