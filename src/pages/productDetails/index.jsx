@@ -27,9 +27,10 @@ import ProductsService from '../../services/ProductsService';
 
 function ProductDetails() {
 	const [tamanho, setTamanhos] = useState({
-		tamanhos: [4, 5, 6, 7, 8, 9, 10],
-		selectTamanho: 4,
+		tamanhos: [],
+		selectTamanho: 0,
 	});
+
 	const [products, setProducts] = useState(null);
 	const { id } = useParams();
 
@@ -43,13 +44,13 @@ function ProductDetails() {
 	useEffect(() => {
 		const name = products ? products.name : '';
 		const index = name.toLocaleUpperCase().indexOf('TAM');
-		const tamanhos = name
-			.substr(index + 3)
-			.replaceAll(' ', '')
-			.split('a')
-			.map((t) => parseInt(t, 10));
 
 		if (index !== -1) {
+			const tamanhos = name
+				.substr(index + 3)
+				.split('a')
+				.map((t) => parseInt(t, 10));
+
 			const tam = [];
 
 			// eslint-disable-next-line no-plusplus

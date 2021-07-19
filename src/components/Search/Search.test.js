@@ -3,24 +3,23 @@ import Search from './index';
 import FilterContext from '../../contexts/FilterContext';
 
 describe('Testando component search', () => {
-    it('Teste de Snapshot', () => {
-        let filter = '';
-        const setFilter = f => filter = f;
+	it('Teste de Snapshot', () => {
+		let filter = '';
+		const setFilter = (f) => (filter = f);
 
-        render(
-            <FilterContext.Provider value={{ setFilter }}>
-                <Search />
-            </FilterContext.Provider>
-        )
+		render(
+			<FilterContext.Provider value={{ setFilter }}>
+				<Search />
+			</FilterContext.Provider>
+		);
 
-        const input = screen.getByTestId("search-test");
-        
-        expect(input.value).toBe("");
+		const input = screen.getByTestId('search-test');
 
-        fireEvent.change(input, { target: { value: "Cuzcus" } });
+		expect(input.value).toBe('');
 
-        expect(filter).toBe("Cuzcus");
-        expect(input.value).toBe("Cuzcus");
+		fireEvent.change(input, { target: { value: 'Cuzcus' } });
 
-    });
+		expect(filter).toBe('Cuzcus');
+		expect(input.value).toBe('Cuzcus');
+	});
 });

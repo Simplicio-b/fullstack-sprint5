@@ -60,6 +60,7 @@ function ProductsPage() {
 								)
 								.map((p) => (
 									<Product
+										key={p.sku}
 										image={p.image}
 										name={p.name}
 										price={p.price}

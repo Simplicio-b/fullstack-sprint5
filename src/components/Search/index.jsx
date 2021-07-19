@@ -20,7 +20,7 @@ function Search() {
 				type="search"
 				placeholder="O que você está procurando?"
 				onChange={(event) => setFilter(event.target.value)}
-				data-testid='search-test'
+				data-testid="search-test"
 			/>
 		</Container>
 	);
