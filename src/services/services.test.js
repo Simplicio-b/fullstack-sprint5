@@ -4,8 +4,25 @@ import ServiceUtils from './ServiceUtils';
 
 jest.mock('./ServiceUtils');
 
+
+
 describe('Testando as funcoes de service', () => {
-	it('Testando Service utils', async () => {});
+	it('Testando Service utils', async () => {
+		const val = await ServiceUtils.handleResponse.mockReturnValue(
+			new Promise((resolve, reject) => {
+				try {
+					resolve({ teste: 'cuzcus' })
+				}catch(e) {
+					reject(new Error('Error'))
+				}
+			})
+		)
+
+		console.log(val.mock)
+
+		// expect(await val).toBe({ teste: 'cuzcus' })
+
+	});
 
 	it('Testando categorias service', async () => {
 		const res = {
