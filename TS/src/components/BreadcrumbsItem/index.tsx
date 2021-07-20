@@ -1,0 +1,25 @@
+import React from 'react'
+import { BreadcrumbItem as Container, Separator } from './styles';
+
+function BreadcrumbItem(props: any) : JSX.Element {
+
+	const {
+		link, 
+		label
+	} = props
+
+	return (
+		<Container>
+			{link ? (
+				<>
+					<a href={link}>{label}</a>
+					<Separator>/</Separator>
+				</>
+			) : (
+				<span>{label}</span>
+			)}
+		</Container>
+	);
+}
+
+export default BreadcrumbItem;

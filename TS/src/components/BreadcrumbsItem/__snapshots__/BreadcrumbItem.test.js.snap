@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Teste component BreadcrumbItem Teste de snapshot BreadcrumbItem 1`] = `
+<li
+  class="sc-bdnxRM hRLdiV"
+>
+  <a
+    href="#home"
+  >
+    Home
+  </a>
+  <span
+    class="sc-gtsrHT iPqxYL"
+  >
+    /
+  </span>
+</li>
+`;

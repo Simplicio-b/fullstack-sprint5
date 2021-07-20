@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testes no component FilterItem Testes de snapshot 1`] = `
+<li
+  class="sc-bdnxRM iwRZmc"
+>
+  <span
+    class="sc-gtsrHT dyvFCZ"
+  >
+    cuzcus com leite e ovos
+  </span>
+  <img
+    alt="filtro"
+    class="filters__img"
+    src="assets/filter.svg"
+  />
+</li>
+`;
