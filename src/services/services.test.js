@@ -18,7 +18,7 @@ describe('Testando as funcoes de service', () => {
 			})
 		)
 
-		console.log(val.mock)
+		// console.log(val.mock)
 
 		// expect(await val).toBe({ teste: 'cuzcus' })
 
