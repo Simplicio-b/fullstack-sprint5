@@ -9,7 +9,7 @@ import MessageContext from './MessageContext';
 import CategoriesService from '../services/CategoriesService';
 
 // eslint-disable-next-line react/prop-types
-function Provider({ children }) {
+function Provider({ children }: any) {
 	const [filter, setFilter] = useState('');
 	const [message, setMessage] = useState('');
 	const [categories, setCategories] = useState({});
@@ -18,7 +18,7 @@ function Provider({ children }) {
 	function loadCategories() {
 		addRequest();
 		CategoriesService.get()
-			.then((c) => setCategories(c))
+			.then((c: any) => setCategories(c))
 			.catch(() => setMessage('Ocorreu um erro ao carregar as categorias...'))
 			.finally(() => removeRequest());
 	}
