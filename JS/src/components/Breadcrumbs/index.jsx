@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import CategoriesContext from '../../contexts/CategoriesContext';
 
-import BreadcrumbItem from '../BreadcrumbsItem/index.tsx';
+import BreadcrumbItem from '../BreadcrumbsItem';
 
 import { Breadcrumb, BreadcrumbsList } from './styles';
 

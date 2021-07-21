@@ -6,10 +6,6 @@
 		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/react": "^11.2.7",
 		"@testing-library/user-event": "^12.8.3",
-		"@types/jest": "^26.0.24",
-		"@types/node": "^12.20.16",
-		"@types/react": "^17.0.14",
-		"@types/react-dom": "^17.0.9",
 		"eslint-config-airbnb-base": "^14.2.1",
 		"eslint-plugin-markdown": "^2.2.0",
 		"install-peerdeps": "^3.0.3",
@@ -51,10 +47,6 @@
 		]
 	},
 	"devDependencies": {
-		"@types/react-router-dom": "^5.1.7",
-		"@types/styled-components": "^5.1.11",
-		"@typescript-eslint/eslint-plugin": "^4.28.2",
-		"@typescript-eslint/parser": "^4.28.2",
 		"eslint": "^7.31.0",
 		"eslint-config-airbnb": "^18.2.1",
 		"eslint-config-prettier": "^8.3.0",
